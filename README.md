@@ -13,39 +13,39 @@ The Answer: Partially. This project demonstrates where the approach works, where
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │  PHASE 1: Self-Supervised Feature Learning                  │
-│  ┌──────────┐      ┌────────┐      ┌──────────────┐       │
-│  │  Image   │ ───> │  DINO  │ ───> │  Attention   │       │
-│  │ (224×224)│      │  ViT   │      │     Maps     │       │
-│  └──────────┘      └────────┘      └──────────────┘       │
-│                                           │                  │
+│  ┌──────────┐      ┌────────┐      ┌──────────────┐         │
+│  │  Image   │ ───> │  DINO  │ ───> │  Attention   │         │
+│  │ (224×224)│      │  ViT   │      │     Maps     │         │
+│  └──────────┘      └────────┘      └──────────────┘         │
+│                                           │                 │
 └───────────────────────────────────────────┼─────────────────┘
                                             ▼
 ┌─────────────────────────────────────────────────────────────┐
 │  PHASE 2: Pseudo-Label Generation                           │
-│  ┌──────────────┐      ┌────────────┐      ┌────────────┐ │
-│  │  Attention   │ ───> │ Multi-Scale│ ───> │  Pseudo    │ │
-│  │   Hierarchy  │      │ Threshold  │      │  Bboxes    │ │
-│  └──────────────┘      └────────────┘      └────────────┘ │
-│  (layers -1,-2,-3)      (95th %ile)         (NMS @ 0.5)   │
-└─────────────────────────────────────────────┼─────────────┘
-                                            ▼
+│  ┌──────────────┐      ┌────────────┐      ┌────────────┐   │
+│  │  Attention   │ ───> │ Multi-Scale│ ───> │  Pseudo    │   │
+│  │   Hierarchy  │      │ Threshold  │      │  Bboxes    │   │
+│  └──────────────┘      └────────────┘      └────────────┘   │
+│  (layers -1,-2,-3)      (95th %ile)         (NMS @ 0.5)     │
+└─────────────────────────────────────────────┼───────────────┘
+                                              ▼
 ┌─────────────────────────────────────────────────────────────┐
 │  PHASE 3: Real-Time Detector Training                       │
-│  ┌────────────┐      ┌────────┐      ┌──────────────┐     │
-│  │  Pseudo    │ ───> │ YOLOv8 │ ───> │   Trained    │     │
-│  │  Labels    │      │(50 ep) │      │   Detector   │     │
-│  └────────────┘      └────────┘      └──────────────┘     │
+│  ┌────────────┐      ┌────────┐      ┌──────────────┐       │
+│  │  Pseudo    │ ───> │ YOLOv8 │ ───> │   Trained    │       │
+│  │  Labels    │      │(50 ep) │      │   Detector   │       │
+│  └────────────┘      └────────┘      └──────────────┘       │
 └─────────────────────────────────────────────────────────────┘
                                             │
                                             ▼
 ┌─────────────────────────────────────────────────────────────┐
 │  PHASE 4: Production Inference + AI Reasoning               │
-│  ┌────────┐   ┌────────┐   ┌───────────┐   ┌──────────┐  │
-│  │  New   │──>│ YOLO   │──>│ Defect    │──>│ Decision │  │
-│  │ Image  │   │Detect  │   │ Reasoner  │   │ Engine   │  │
-│  └────────┘   └────────┘   └───────────┘   └──────────┘  │
+│  ┌────────┐   ┌────────┐   ┌───────────┐   ┌──────────┐     │
+│  │  New   │──>│ YOLO   │──>│ Defect    │──>│ Decision │     │
+│  │ Image  │   │Detect  │   │ Reasoner  │   │ Engine   │     │
+│  └────────┘   └────────┘   └───────────┘   └──────────┘     │
 │                                                             │
-│  Decision Types: AUTO_ACCEPT | AUTO_REJECT | HUMAN_REVIEW │
+│  Decision Types: AUTO_ACCEPT | AUTO_REJECT | HUMAN_REVIEW   │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -174,6 +174,10 @@ pip install torch torchvision opencv-python ultralytics matplotlib tqdm Pillow
 4. Download the [MVTec AD dataset](https://www.kaggle.com/datasets/ipythonx/mvtec-ad), and extract it inside the main project directory as folder `MVTecAD`.
 5. Open and run the cells of the `DINOYOLO.ipynb` Jupyter Notebook for the specified category.
 
+## Contributing
 
-DINO-YOLO-Defect-Study
-A technical study of attention-based pseudo-labeling for industrial defect detection using DINO for self-supervised attention and YOLO for weakly-supervised training.
+Contributions are welcome!
+
+## License
+
+Distributed under the MIT License. 
