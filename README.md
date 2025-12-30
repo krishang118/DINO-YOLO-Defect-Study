@@ -5,7 +5,9 @@ An empirical study demonstrating both the promise and fundamental limitations of
 ## Overview
 
 The Challenge: In real-world manufacturing, obtaining precise defect annotations (bounding boxes, pixel masks) is expensive, time-consuming, and impractical for constantly evolving defect types.
+
 The Question: Can self-supervised Vision Transformers (DINO) generate training labels for real-time object detectors (YOLO) without any manual annotation?
+
 The Answer: Partially. This project demonstrates where the approach works, where it fails, and, most importantly, *why*.
 
 ## System Architecture
