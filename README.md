@@ -1,6 +1,6 @@
 # Weakly-Supervised Industrial Defect Detection - Exploring DINO + YOLO for Annotation-Free Quality Control
 
-An empirical study demonstrating both the promise and fundamental limitations of attention-based pseudo-labeling for industrial defect detection.
+An empirical study using DINO and YOLO demonstrating both the promise and limitations of attention-based pseudo-labeling for industrial defect detection.
 
 ## Overview
 
