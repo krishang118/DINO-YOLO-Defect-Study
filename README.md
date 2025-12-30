@@ -14,7 +14,7 @@ The Answer: Partially. This project demonstrates where the approach works, where
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  PHASE 1: Self-Supervised Feature Learning                  │
+│  Phase 1: Self-Supervised Feature Learning                  │
 │  ┌──────────┐      ┌────────┐      ┌──────────────┐         │
 │  │  Image   │ ───> │  DINO  │ ───> │  Attention   │         │
 │  │ (224×224)│      │  ViT   │      │     Maps     │         │
@@ -23,7 +23,7 @@ The Answer: Partially. This project demonstrates where the approach works, where
 └───────────────────────────────────────────┼─────────────────┘
                                             ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  PHASE 2: Pseudo-Label Generation                           │
+│  Phase 2: Pseudo-Label Generation                           │
 │  ┌──────────────┐      ┌────────────┐      ┌────────────┐   │
 │  │  Attention   │ ───> │ Multi-Scale│ ───> │  Pseudo    │   │
 │  │   Hierarchy  │      │ Threshold  │      │  Bboxes    │   │
@@ -32,7 +32,7 @@ The Answer: Partially. This project demonstrates where the approach works, where
 └─────────────────────────────────────────────┼───────────────┘
                                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  PHASE 3: Real-Time Detector Training                       │
+│  Phase 3: Real-Time Detector Training                       │
 │  ┌────────────┐      ┌────────┐      ┌──────────────┐       │
 │  │  Pseudo    │ ───> │ YOLOv8 │ ───> │   Trained    │       │
 │  │  Labels    │      │(50 ep) │      │   Detector   │       │
@@ -41,7 +41,7 @@ The Answer: Partially. This project demonstrates where the approach works, where
                                             │
                                             ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  PHASE 4: Production Inference + AI Reasoning               │
+│  Phase 4: Production Inference + AI Reasoning               │
 │  ┌────────┐   ┌────────┐   ┌───────────┐   ┌──────────┐     │
 │  │  New   │──>│ YOLO   │──>│ Defect    │──>│ Decision │     │
 │  │ Image  │   │Detect  │   │ Reasoner  │   │ Engine   │     │
